@@ -20,6 +20,10 @@ systemctl start docker.service
 
 ```
 mkdir ${HOME}/docker-stack
+yum install git -y
+ git clone https://github.com/kengraf/guacamole.git
+cd guacamole
+HOME=`pwd`
 cd ${HOME}/docker-stack
 
 mkdir -p ${HOME}/docker-stack/guacamole/init
