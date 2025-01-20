@@ -35,7 +35,7 @@ sed -i "s/your fqdn/$ENDPOINT/g" docker-stack/haproxy/.env
 
 chown -R ${USER}:${USER} ${HOME}/docker-stack/
 
-docker compose -f ${HOME}/docker-stack/haproxy/docker-compose.yml up -d
-docker compose -f ${HOME}/docker-stack/guacamole/docker-compose.yml up -d
+docker-compose -f ${HOME}/docker-stack/haproxy/docker-compose.yml up -d
+docker-compose -f ${HOME}/docker-stack/guacamole/docker-compose.yml up -d
 ``
 
