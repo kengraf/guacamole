@@ -25,4 +25,11 @@ mkdir -p ${HOME}/docker-stack/guacamole/init
 chmod -R +x ${HOME}/docker-stack/guacamole/init
 docker run --rm guacamole/guacamole:1.5.3 /opt/guacamole/bin/initdb.sh --postgresql > ${HOME}/docker-stack/guacamole/init/initdb.sql
 
+ENDPOINT=your_real_fqdn
+sed -i "s/your fqdn/$ENDPOINT/g" docker-stack/haproxy/.env
+
+chown -R ${USER}:${USER} ${HOME}/docker-stack/
+
+docker compose -f ${HOME}/docker-stack/haproxy/docker-compose.yml up -d
+docker compose -f ${HOME}/docker-stack/guacamole/docker-compose.yml up -d
 
