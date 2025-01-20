@@ -25,3 +25,4 @@ mkdir -p ${HOME}/docker-stack/guacamole/init
 chmod -R +x ${HOME}/docker-stack/guacamole/init
 docker run --rm guacamole/guacamole:1.5.3 /opt/guacamole/bin/initdb.sh --postgresql > ${HOME}/docker-stack/guacamole/init/initdb.sql
 
+
