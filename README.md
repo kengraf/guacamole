@@ -18,6 +18,7 @@ systemctl enable docker.service
 systemctl start docker.service
 ```
 
+```
 mkdir ${HOME}/docker-stack
 cd ${HOME}/docker-stack
 
@@ -32,4 +33,5 @@ chown -R ${USER}:${USER} ${HOME}/docker-stack/
 
 docker compose -f ${HOME}/docker-stack/haproxy/docker-compose.yml up -d
 docker compose -f ${HOME}/docker-stack/guacamole/docker-compose.yml up -d
+``
 
